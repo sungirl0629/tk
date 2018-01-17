@@ -1,0 +1,75 @@
+{include file="public/head"}
+        <div class="tpl-content-wrapper">
+            <div class="tpl-portlet-components">
+                <div class="portlet-title">
+                    <div class="caption font-green bold">
+                        选项添加
+                    </div>
+                    <div class="tpl-portlet-input tpl-fz-ml">
+                        <div class="portlet-input input-small input-inline">
+                            <div class="input-icon right">
+                                <i class="am-icon-search"></i>
+                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tpl-block ">
+
+                    <div class="am-g tpl-amazeui-form">
+
+
+                        <div class="am-u-sm-12 am-u-md-9">
+                <form method="post" action="{:url('Index/do_addoptions')}" class="am-form am-form-horizontal">
+                    <input type="hidden" name="pid" value="{$pid}">
+                    <div id="alloptions">
+                    <div class="optionlist">
+                        <div class="am-form-group">
+                            <label for="rule_en_name" class="am-u-sm-3 am-form-label">选项名称</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" name="optionnames[]" id="rule_en_name" placeholder="ABCD">
+                            </div>
+
+                        </div>
+                        <div class="am-form-group">
+
+                            <label for="rule_en_name" class="am-u-sm-3 am-form-label">选项内容</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" name="contents[]" id="rule_en_name" placeholder="ABCD">
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+                    <button id="addops" type="button">+</button>
+
+
+
+
+
+
+
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                        <button type="submit" class="am-btn am-btn-primary">保存</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+	{include file="public/foot"}
+	<script type="text/javascript">
+        $('#addops').click(function(){
+                var htmls=$('.optionlist').html();
+
+                $('#alloptions').append(htmls);
+
+        });
+    </script>
+</body>

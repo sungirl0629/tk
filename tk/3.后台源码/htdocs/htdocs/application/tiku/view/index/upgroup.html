@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+{include file="public/head"}
+<body data-type="generalComponents">
+            <div class="tpl-portlet-components">
+                <div class="portlet-title">
+                    <div class="caption font-green bold">
+                        用户组修改
+                    </div>
+                    <div class="tpl-portlet-input tpl-fz-ml">
+                        <div class="portlet-input input-small input-inline">
+                            <div class="input-icon right">
+                                <i class="am-icon-search"></i>
+                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tpl-block ">
+                    <div class="am-g tpl-amazeui-form">
+                        <div class="am-u-sm-12 am-u-md-9">
+                            <form class="am-form am-form-horizontal" action="{:url('Index/do_upgroup')}" method="post">
+							<input type="hidden" name="id" value="{$info.id}"/>
+                                <div class="am-form-group">
+                                    <label for="user-email" class="am-u-sm-3 am-form-label">规则中文名称 / ZhName</label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" id="user-email" placeholder="规则中文名称 / Name" name="title" value="{$info.title}">
+                                        <small></small>
+                                    </div>
+                                </div>                        
+                                 <div class="am-form-group">
+                                    <label for="user-QQ" class="am-u-sm-3 am-form-label">状态</label>
+                                    <div class="am-u-sm-9">
+                                        <input type="radio" name="status" {if condition='$info.status eq 1'} checked="$checked" {/if} value='1'"><small>启用</small>
+                                        <input type="radio" name="status" {if condition="$info.status eq 0"} checked="$checked" {/if}  value='0'><small>禁用</small>
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                        <button type="submit" class="am-btn am-btn-primary">修改</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{include file="public/foot"}
+</body>
